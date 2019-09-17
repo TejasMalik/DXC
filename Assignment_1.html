@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Welcome2</title>
+        <script>
+            function check() {
+                var uname = document.getElementById("username").value
+                var pword = document.getElementById("password").value
+                var uspan = document.getElementById("len1")
+                var p1_span = document.getElementById("len2")
+                var p2_span = document.getElementById("bw")
+                var p3_span = document.getElementById("startChar")
+                if (uname.length == 0) {
+                    if (pword.length != 0) {
+                        uspan.innerHTML = "<font color = red>Username cannot be left blank</font>"
+                        p1_span.innerHTML = ""
+                        p2_span.innerHTML = ""
+                        p3_span.innerHTML = ""
+                    }else {
+                        uspan.innerHTML = "<font color = red>Username cannot be left blank</font>"
+                        p2_span.innerHTML = ""
+                        p3_span.innerHTML = ""
+                    }
+                } else
+                if (pword.length == 0) {
+                    if (uname.length != 0) {
+                        uspan.innerHTML = ""
+                        p1_span.innerHTML = "<font color = red>Password cannot be left blank</font>"
+                        p2_span.innerHTML = ""
+                        p3_span.innerHTML = ""
+                    }else {
+                        p1_span.innerHTML = "<font color = red>Password cannot be left blank</font>"
+                        p2_span.innerHTML = ""
+                        p3_span.innerHTML = ""
+                    }
+                }else
+                if ((pword.length<6 || pword.length>12)) {
+                    if (uname.length != 0) {
+                        uspan.innerHTML = ""
+                        p1_span.innerHTML = ""
+                        p2_span.innerHTML = "<font color = red>Password should be between 6-12</font>"
+                        p3_span.innerHTML = ""
+                    }else {
+                        p1_span.innerHTML = ""
+                        p2_span.innerHTML = "<font color = red>Password should be between 6-12</font>"
+                        p3_span.innerHTML = ""
+                    }
+                }else
+                if (pword.charAt(0) != 'A') {
+                    if (uname.length != 0) {
+                        uspan.innerHTML = ""
+                        p1_span.innerHTML = ""
+                        p2_span.innerHTML = ""
+                        p3_span.innerHTML = "<font color = red>Password should start with an A</font>"
+                    }else {
+                        p1_span.innerHTML = ""
+                        p2_span.innerHTML = ""
+                        p3_span.innerHTML = "<font color = red>Password should start with an A</font>"
+                    }
+                }
+                else {
+                    uname.innerHTML = ""
+                    p1_span.innerHTML = ""
+                    p2_span.innerHTML = ""
+                    p3_span.innerHTML =""
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1><center><u>Login Form</u></center></h1>
+        <form>
+            <table align="center" cellspacing = "10" cellpadding="10">
+                <tr>
+                    <td>Username:</td>
+                    <td><input type="text" name="username" id="username"></td>
+                    <td><span id="len1"></span></td>
+                </tr>
+                <tr>
+                    <td>Password</td> 
+                    <td><input type="password" name="password" id="password"></td>
+                    <td><span id="len2"></span>
+                    <span id="bw"></span>
+                    <span id="startChar"></span></td>
+                </tr>
+                <tr>
+                    <td align="center"><input type="button" value="Login" onclick="check()"></td> 
+                    <td align="center"><input type="reset" value="Clear"></td>
+                </tr>
+                <tr>
+                    <td align="center">New User... <a href="Registration Form.html">Register</a></td> 
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
