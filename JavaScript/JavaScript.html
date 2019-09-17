@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            n1 = prompt("Enter the first number: ")
+            n3 = parseInt(n1)
+            n2 = prompt("Enter the second number: ")
+            n4 = parseInt(n2)
+            function addTwo() {
+                n5 = n3 + n4
+                return n5
+            }
+            function displayAdd() {
+                addTwo()
+                document.write(n5)
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Add" onclick="addTwo(22,33)">
+        <input type="button" value="Display" onclick="displayAdd()">
+    </body>
+</html>
