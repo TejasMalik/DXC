@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Welcome2</title>
+    <script>
+        function check() {
+            var uname = document.getElementById("username").value
+            var pword = document.getElementById("password").value
+            var uspan = document.getElementById("len1")
+            var p1_span = document.getElementById("len2")
+            uspan.innerHTML = ""
+            p1_span.innerHTML = ""
+            if (uname.length == 0) {
+                uspan.innerHTML = "<font color = red>Username cannot be left blank</font>"
+                return false
+            }
+
+            if (pword.length == 0) {
+                p1_span.innerHTML = "<font color = red>Password cannot be left blank</font>"
+                return false
+            }
+
+            else if ((pword.length < 6 || pword.length > 12)) {
+                p1_span.innerHTML = "<font color = red>Password should be between 6-12</font>"
+                return false
+            }
+            else if (pword.charAt(0) != 'A') {
+                p1_span.innerHTML = "<font color = red>Password should start with an A</font>"
+                return false
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>
+        <center><u>Login Form</u></center>
+    </h1>
+    <form action="Blank.html" onsubmit="return check()">
+        <table align="center" cellspacing="10" cellpadding="10">
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="username" id="username"></td>
+                <td><span id="len1"></span></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" id="password"></td>
+                <td><span id="len2"></span></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="submit" value="Login"></td>
+                <td align="center"><input type="reset" value="Clear"></td>
+            </tr>
+            <tr>
+                <td align="center">New User... <a href="Registration Form.html">Register</a></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
