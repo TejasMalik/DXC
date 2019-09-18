@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script>
+            function addNum() {
+                res = document.getElementById("res")
+                sum = 0
+                arr = new Array(document.forms[0].elements.length)
+                for(i=0; i<arr.length; i++) {
+                    arr[i] = document.forms[0].elements[i].value
+                    sum += parseInt(arr[i])
+                }
+                res.innerHTML = "<font color=green>The Sum is: </font>"+sum
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Number 1: <input type="text" name="num1" id="num1"><br/>
+            Number 2: <input type="text" name="num2" id="num2"><br/>
+            Number 3: <input type="text" name="num3" id="num3"><br/>
+            Number 4: <input type="text" name="num4" id="num4"><br/>
+            Number 5: <input type="text" name="num5" id="num5" onblur="addNum()">
+        </form>
+        <div id="res"></div>
+    </body>
+</html>

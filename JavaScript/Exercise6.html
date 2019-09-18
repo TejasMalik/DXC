@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <script>
+        function check() {
+            with (document.forms[0]) {
+                if (name.value.length == 0 || password.value.length == 0 || cpassword.value.length == 0) {
+                    alert("Enter the Mandatory Fields")
+                    return false
+                }
+                if (password.value != cpassword.value) {
+                    alert("Password does not Match")
+                    return false
+                }
+                if (qualification.value == "select option") {
+                    alert("Enter the Qualifications")
+                    return false
+                }
+                var checking = 0;
+                for (i = 0; i < ab.length; i++) {
+                    if (!ab[i].checked) {
+                        checking++
+                    }
+                }
+
+                if (checking == ab.length) {
+                    alert("Check Atleast on AlertBy")
+                    return false
+                }
+            }
+        }
+
+        function user() {
+            var uname = document.getElementById("uname")
+            uname.innerHTML = ""
+            with (document.forms[0]) {
+                if (username.value.length == 0) {
+                    uname.innerHTML = "<font color=red>Enter Username</font>"
+                    username.focus();
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1><u>
+            <center>Registration Form</center>
+        </u></h1>
+    <form action="HTML\Blank.html" onsubmit="return check()">
+        <table align="center" cellspacing="10" cellpadding="10" bgcolor="Yellow">
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="username" id="username" onblur="user()"></td>
+                <td><span id="uname"></span></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" id="password"></td>
+            </tr>
+            <tr>
+                <td>Confirm Password:</td>
+                <td><input type="password" name="cpassword" id="cpassword"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td><input type="radio" name="gender" id="male" value="Male" checked>Male
+                    <input type="radio" name="gender" id="female" value="Female">Female
+                    <input type="radio" name="gender" id="other" value="Others">Others</td>
+            </tr>
+            <tr>
+                <td>Qualification:</td>
+                <td>
+                    <select name="qualification" id="qualification">
+                        <option value="select option">Select Option</option>
+                        <option value="MCA">MCA</option>
+                        <option value="MBA">MBA</option>
+                        <option value="MTech">MTech</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Alert By:</td>
+                <td><input type="checkbox" name="ab" id="ab1" value="Mobile">Mobile
+                    <input type="checkbox" name="ab" id="ab2" value="E-Mail">E-Mail
+                    <input type="checkbox" name="ab" id="ab3" value="Letters">Letters</td>
+            </tr>
+            <tr>
+                <td align="center"><input type="submit" value="Register"></td>
+                <td align="center"><input type="reset" value="Clear"></td>
+            </tr>
+            <tr>
+                <td align="center">Already a User....... <a href="LoginForm.html">Login</a></td>
+            </tr>
+        </table>
+    </form>
+    <div id="res"></div>
+</body>
+
+</html>
