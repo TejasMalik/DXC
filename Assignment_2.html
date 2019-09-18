@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script>
+        function addToList(item, list) {
+            len = list.options.length
+            option1 = new Option(item.value, item.value)
+            list.options[len] = option1
+        }
+
+        function removeAndAddToList(item, list1, list2) {
+            rem = list1.selectedIndex
+            len = list2.options.length
+            if (list1.options[rem].value == "----") {
+                return
+            }
+            option1 = new Option(list1.options[rem].value, list1.options[rem].value)
+            list2.options[len] = option1
+            list1.options[rem] = null
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        Enter: <input type="text" name="toAdd" id="toAdd" onblur="addToList(this, this.form.addedItem)">
+        <select name="addedItem" id="addedItem">
+            <option value="----">----</option>
+        </select>
+        <input type="button" name="toRemove" id="toRemove" value="Remove Selected" onclick="removeAndAddToList(this, this.form.addedItem, this.form.removedItem)">
+        <select name="removedItem" id="removedItem">
+            <option value="----">----</option>
+        </select>
+    </form>
+</body>
+
+</html>
