@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <style>
+        form {
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+            height: 520px;
+            margin-left: 250px;
+            margin-top: 20px;
+            margin-right: 250px;
+        }
+
+        div {
+            margin-left: 30px;
+        }
+
+        .shiftImg {
+            margin-top: 50px;
+        }
+
+        .shift {
+            float: right;
+            margin-right: 80px;
+            transform: translate(0px, -170px)
+        }
+
+        input {
+            margin-left: 30px;
+            height: 32px;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+        }
+
+        ​ .incText {
+            font-size: 250px;
+        }
+
+        .deccText {
+            font-size: 12.7px;
+            transform: translate(0px, -5px)
+        }
+
+        .signInOnly {
+            color: blue;
+            margin-left: 30px;
+        }
+
+        select {
+            margin-left: 245px;
+            font-size: 10px;
+            border-color: white
+        }
+
+        .shiftDown {
+            margin-top: 10px;
+            margin-left: 5px
+        }
+
+        .shiftHPT {
+            float: right;
+            font-size: 10px;
+            transform: translate(307px,0px)
+        }
+
+        .shiftButton {
+            border: blue;
+            margin-left: 195px;
+            color: white;
+            background-color: blue;
+            width: 70px;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .shPri {
+            margin-left: 30px;
+        }
+
+        center {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div><img class="shiftImg" src="Screenshot (5).png" height="30px"></div>
+        <div class="incText"><h3>Create your Google Account</h3></div><br /><br/>
+
+        <input type="text" class="" placeholder="First name" name="fname" id="fname">
+        <input type="text" placeholder="Last name" name="lname" id="lname"><br /><br />
+        <input type="text" placeholder="Username" name="uname" id="uname" size="49px"><br /><br />
+        <div class="deccText">You can use letters, number & periods</div><br />
+        <div class="shift"><img class="hidden-md hidden-xs hidden-se hidden-sm" src="Screenshot (4).png" height="200px"><br /><br />
+            <font color="grey" class="hidden-md hidden-xs hidden-se hidden-sm"><center>One account. All of Google</center>
+                <center>working for you.</center>
+            </font>
+        </div>
+
+        <input type="password" placeholder="Password" name="pword" id="pword" size="17px">
+        <input type="password" placeholder="Confirm" name="cpword" id="cpword" size="17px"><img class="shiftDown"
+            src="Screenshot (6).png" height="20px"><br /><br />
+        <div class="deccText">Use 8 or more characters with the a mix of letters, numbers & <br />symbols</div>
+
+        <br />
+        <br /><span class="signInOnly">Sign in instead</span>
+        <input class="shiftButton" type="button" value="Next">
+
+    </form>
+    <select>
+        <option value="English (United Kingdom)">English (United Kingdom)</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Hindi">Hindi</option>
+    </select>
+
+    <span class="shiftHPT hidden-md hidden-xs hidden-se hidden-sm">Help<span class="shPri">Privacy</span><span class="shPri">Terms</span></span>
+</body>
+
+</html>

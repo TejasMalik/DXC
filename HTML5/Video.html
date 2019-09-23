@@ -1,0 +1,35 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <input type="button" name="playNpause" id="playNpause" value="Play/Pause" onclick="playPause()">
+        <input type="button" name="big" id="big" value="Big" onclick="bigBig()">
+        <input type="button" name="small" id="small" value="Small" onclick="smallSmall()">
+        <input type="button" name="normal" id="normal" value="Normal" onclick="normalNormal()">
+        <video src="Plants vs. Zombies Garden Warfare 2013 Zombie Class Reveal.mp4" width="500" height="500" id="myVideo" controls></video>
+
+
+        <script>
+                vid = document.getElementById("myVideo")
+                function playPause() {
+                    if(vid.paused) {
+                        vid.play();
+                    }else {
+                        vid.pause()
+                    }
+                }
+                
+                function bigBig() {
+                    vid.width = 1000;
+                }
+    
+                function smallSmall() {
+                    vid.width = 200;
+                }
+    
+                function normalNormal() {
+                    vid.width = 500;
+                }
+            </script>
+    </body>
+</html>

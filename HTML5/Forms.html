@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function addRange() {
+                op1 = parseInt(document.getElementById("a").value)
+                op2 = document.getElementById("op2").value
+                if (op2.length == 0) {
+                    return op1
+                }
+
+                return op1+parseInt(op2)
+            }
+        </script>
+    </head>
+    <body>
+        <form oninput="x.value = addRange()">
+            0<input type="range" min="0" max="100" name="a" id="a" value="50">100
+            +
+            <input type="text" name="op2" id="op2">
+            =
+            <output name="x"></output>
+        </form>
+    </body>
+</html>
