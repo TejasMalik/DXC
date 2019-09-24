@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="jquery-3.4.1.js"></script>
+<script>
+    $('document').ready(function () {
+        $('#a').click(function () {
+            $('#b').slideToggle("fast")
+        })
+        $('input').focus(function () {
+            $('label').animate({
+                top: '-18px',
+                fontSize: "15px"
+            })
+        })
+        $('input').blur(function () {
+            $('label').animate({
+                top: "0px",
+                fontSize: "20px"
+            })
+        })
+        $('label').click(function () {
+            $('label').animate({
+                top: '-18px',
+                fontSize: "15px"
+            }, function(){
+                $('input').focus()
+            })
+        })
+
+        /*     $('input').focus(function () {
+                 $('label').slideUp("fast", function() {
+                     $('p').slideUp("fast")
+                 })
+             })
+     
+             $('input').blur(function () {
+                 $('label').slideDown("fast", function() {
+                     $('p').hide()
+                 })
+     
+         })*/
+    })
+
+</script>
+<style>
+    #a,
+    #b {
+        padding: 5px;
+        text-align: center;
+        background-color: green;
+        border: 1px solid red;
+    }
+
+    #b {
+        padding: 50px;
+        display: none;
+    }
+
+    label {
+        position: absolute;
+        font-size: 20px;
+        margin-left: 2px;
+        margin-top: 10px;
+        background-color: white;
+        color: grey;
+    }
+
+    #c {
+        transform: translate(100px, 150px)
+    }
+
+    input {
+        height: 40px;
+    }
+
+</style>
+
+<body>
+    <div id="a">Click Here To show</div>
+    <div id="b">Enjoy</div>
+
+    <div id="c">
+        <label>FULL NAME</label>
+        <input type="text" name="full" id="full" size="40">
+
+    </div>
+</body>
+
+</html>

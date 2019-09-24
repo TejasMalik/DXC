@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $('document').ready(function () {
+            $('input').focus(function () {
+                $(this).css('border-color', "green")
+            })
+            $('input').blur(function () {
+                $(this).css('border-color', "red")
+            })
+        })
+    </script>
+    <style>
+    </style>
+</head>
+
+<body>
+    Name:<input type="text" name="full"><br />
+    Email:<input type="text" name="Email">
+</body>
+
+</html>
