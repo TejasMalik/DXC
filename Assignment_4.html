@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="JQuery/jquery-3.4.1.js"></script>
+    <script>
+
+        function length() {
+            textLen = document.getElementById("lim").value
+            res = document.getElementById("result")
+
+            res.innerHTML = (15 - textLen.length) + " " + "more characters you can type."
+
+        }
+        $('document').ready(function () {
+            textLen = document.getElementById("lim").value
+            chec = document.getElementById("checkThis")
+            if (textLen.length != 0 && chec.checked) {
+                $('#onlyFilled').removeAttr("disabled")
+            } else {
+                $('#onlyFilled').attr("disabled", "disabled")
+            }
+        })
+
+
+    </script>
+</head>
+
+<body>
+    Enter the text:<br />
+    <input type="text" name="lim" id="lim" maxlength="15" size="50" oninput="length()"><br />
+    <div id="result">15 more characters you can type.</div><br /><br />
+    <div>
+        <input type="checkbox" name="checkThis" id="checkThis">Check This to Submit
+    </div><br /><br />
+
+    <input type="submit" value="Submit" name="onlyFilled" id="onlyFilled">
+
+
+</body>
+
+</html>
